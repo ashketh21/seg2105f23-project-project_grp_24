@@ -1,0 +1,87 @@
+class Administrator
+{
+
+    isA User;
+  
+}
+
+class User
+{
+  firstName;
+  lastName;
+  email;
+  password;
+  username;
+}
+
+class ClubOwner
+{
+  isA User;
+}
+
+class Participant
+{
+  isA User;
+}
+
+class Event
+{
+  region;
+  eventType;
+  difficulty;
+  double fees;
+  int participantLimit;
+Array result;
+* -- 1 RoutePlanning;
+  * -- * Participant;
+  * -- 1 ClubOwner;
+}
+
+class RoutePlanning
+{
+  Double distance;
+  Double elevation;
+  landmark;
+}
+
+//$?[End_of_model]$?
+
+namespace -;
+
+
+class Administrator
+{
+  position 33 289 109 94.8672;
+  position.association User__Administrator 0,31 114,30;
+  position.association Administrator__User 116,17 110,112;
+}
+
+class User
+{
+  position 166 57 140.68 112.367;
+    position.association User__Administrator 114,31 0,30;
+  }
+
+class ClubOwner
+{
+  position 174 288 109 42.3672;
+}
+
+class Participant
+{
+  position 325 267 109 42.3672;
+}
+
+class Event
+{
+  position 457 380 156.93 147.367;
+  position.association Event__RoutePlanning 158,55 0,48;
+  position.association Event__Participant 10,0 110,20;
+  position.association Event__ClubOwner 0,131 108,42;
+  position.association ClubOwner__Event 0,10 110,11;
+}
+
+class RoutePlanning
+{
+  position 686 393 142.43 94.8672;
+}
