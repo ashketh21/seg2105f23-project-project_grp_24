@@ -1,7 +1,214 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"/>
+    android:background="@color/material_dynamic_neutral30"
+    tools:context=".MainActivity"
+    tools:ignore="ExtraText">
+
+    <!-- Image of App -->
+    <ImageView
+        android:id="@+id/cyclingImage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:filterTouchesWhenObscured="false"
+        android:src="@drawable/baseline_directions_bike_24"
+        app:layout_constraintDimensionRatio="H,16:9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="#5A5858" />
+
+    <TextView
+        android:id="@+id/registerTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:filterTouchesWhenObscured="false"
+        android:text="Register your Account"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cyclingImage" />
+    <TextView
+        android:id="@+id/registerEffectTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register your Account"
+        android:textSize="24sp"
+        android:textColor="#959595"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cyclingImage"
+        android:layout_marginTop="14dp"/>
+        -->
+
+    <LinearLayout
+        android:id="@+id/registerLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:filterTouchesWhenObscured="false"
+        android:orientation="vertical"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registerTextView">
+
+        <EditText
+            android:id="@+id/firstNameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="#959595"
+            android:hint="First Name"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:paddingStart="16dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="12dp" />
+
+        <EditText
+            android:id="@+id/lastNameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="#959595"
+            android:hint="Last Name"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:paddingStart="16dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="12dp" />
+
+        <EditText
+            android:id="@+id/emailEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="#959595"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:minHeight="48dp"
+            android:paddingStart="16dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="12dp" />
+
+        <EditText
+            android:id="@+id/passwordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="#959595"
+            android:hint="Password"
+
+            android:inputType="textPassword"
+            android:minHeight="48dp"
+            android:paddingStart="16dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="12dp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/errorFirstNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:filterTouchesWhenObscured="false"
+        android:text="* First Name Entry Is Invalid"
+
+        android:textColor="#F44336"
+        app:layout_constraintStart_toStartOf="@+id/registerLayout"
+        app:layout_constraintTop_toBottomOf="@+id/registerLayout" />
+
+    <TextView
+        android:id="@+id/errorLastNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:filterTouchesWhenObscured="false"
+        android:text="* Last Name Entry Is Invalid"
+
+        android:textColor="#F44336"
+        app:layout_constraintStart_toStartOf="@+id/registerLayout"
+        app:layout_constraintTop_toBottomOf="@+id/errorFirstNameTextView" />
+
+    <TextView
+        android:id="@+id/errorEmailTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:filterTouchesWhenObscured="false"
+        android:text="* Given Email Is Invalid"
+
+        android:textColor="#F44336"
+        app:layout_constraintStart_toStartOf="@+id/registerLayout"
+        app:layout_constraintTop_toBottomOf="@+id/errorLastNameTextView" />
+
+    <TextView
+        android:id="@+id/errorPasswordTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:filterTouchesWhenObscured="false"
+        android:text="* Password Too Short"
+
+        android:textColor="#F44336"
+        app:layout_constraintStart_toStartOf="@+id/registerLayout"
+        app:layout_constraintTop_toBottomOf="@+id/errorEmailTextView" />
+
+    <!--switch button for admin
+    -->
+
+    <Switch
+        android:id="@+id/adminSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:filterTouchesWhenObscured="false"
+        android:minHeight="48dp"
+        android:text="Admin   "
+        android:textColor="#FFFFFF"
+        android:textSize="23sp"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/errorPasswordTextView" />
+
+    <Button
+        android:id="@+id/registerSubmitButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="#959595"
+        android:filterTouchesWhenObscured="false"
+
+        android:phoneNumber="false"
+        android:text="Register"
+        android:textAllCaps="false"
+        android:textColorHighlight="#EAE8E8"
+        android:textColorLink="#716A6A"
+        android:textSize="20sp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adminSwitch" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
