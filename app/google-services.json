@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "133839972879",
+    "project_id": "seg-project-gcc",
+    "storage_bucket": "seg-project-gcc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:133839972879:android:7046e30c73f4bdb6c8d17a",
+        "android_client_info": {
+          "package_name": "com.example.grimpeurscyclingclubgcc"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZOAW-WdpfJiVKTN-CxwARIsjUtr7ncY8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
