@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/material_dynamic_neutral30"
+    android:background="@color/material_dynamic_secondary100"
     tools:context=".MainActivity"
     tools:ignore="ExtraText">
-
-
 
 
     <!-- Image of App -->
@@ -39,19 +36,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cyclingImage" />
+
     <TextView
         android:id="@+id/registerEffectTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
         android:text="Register your Account"
-        android:textSize="24sp"
         android:textColor="#959595"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cyclingImage"
-        android:layout_marginTop="14dp"/>
-        -->
+        app:layout_constraintTop_toBottomOf="@+id/cyclingImage" />
+    -->
 
     <LinearLayout
         android:id="@+id/registerLayout"
@@ -69,13 +67,39 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/registerTextView">
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/roleSelectText"
+                android:layout_width="143dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Select a Role:"
+                android:textSize="16sp" />
+
+            <Spinner
+                android:id="@+id/role"
+                android:layout_width="255dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#959595"
+                android:dropDownWidth="match_parent"
+                android:entries="@array/spinner_items"
+                android:fadingEdge="vertical"
+                android:focusable="auto" />
+        </LinearLayout>
+
         <EditText
-            android:id="@+id/firstNameEditText"
+            android:id="@+id/userName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:background="#959595"
-            android:hint="First Name"
+            android:hint="Username"
             android:inputType="text"
             android:minHeight="48dp"
             android:paddingStart="16dp"
@@ -83,22 +107,47 @@
             android:paddingEnd="16dp"
             android:paddingBottom="12dp" />
 
-        <EditText
-            android:id="@+id/lastNameEditText"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="#959595"
-            android:hint="Last Name"
-            android:inputType="text"
-            android:minHeight="48dp"
-            android:paddingStart="16dp"
-            android:paddingTop="10dp"
-            android:paddingEnd="16dp"
-            android:paddingBottom="12dp" />
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/firstName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:background="#959595"
+                android:hint="First Name"
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:paddingStart="16dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="12dp"
+                android:visibility="visible" />
+
+            <EditText
+                android:id="@+id/lastName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_weight="1"
+                android:background="#959595"
+                android:hint="Last Name"
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:paddingStart="16dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="12dp" />
+
+        </LinearLayout>
 
         <EditText
-            android:id="@+id/emailEditText"
+            android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -112,7 +161,7 @@
             android:paddingBottom="12dp" />
 
         <EditText
-            android:id="@+id/passwordEditText"
+            android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -125,93 +174,41 @@
             android:paddingTop="10dp"
             android:paddingEnd="16dp"
             android:paddingBottom="12dp" />
+
+        <Switch
+            android:id="@+id/adminSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:filterTouchesWhenObscured="false"
+            android:gravity="center"
+            android:minHeight="48dp"
+            android:onClick="onAdminButtonClick"
+
+            android:text="Admin   "
+            android:textColor="#673AB7"
+            android:textSize="23sp" />
+
+        <Button
+            android:id="@+id/registerSubmitButton"
+            android:layout_width="386dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="#959595"
+            android:filterTouchesWhenObscured="false"
+
+            android:onClick="onRegisterButtonClick"
+            android:phoneNumber="false"
+            android:text="Register"
+            android:textAllCaps="false"
+            android:textColorHighlight="#EAE8E8"
+            android:textColorLink="#716A6A"
+
+            android:textSize="20sp" />
+
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/errorFirstNameTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:filterTouchesWhenObscured="false"
-        android:text="* First Name Entry Is Invalid"
-
-        android:textColor="#F44336"
-        app:layout_constraintStart_toStartOf="@+id/registerLayout"
-        app:layout_constraintTop_toBottomOf="@+id/registerLayout" />
-
-    <TextView
-        android:id="@+id/errorLastNameTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:filterTouchesWhenObscured="false"
-        android:text="* Last Name Entry Is Invalid"
-
-        android:textColor="#F44336"
-        app:layout_constraintStart_toStartOf="@+id/registerLayout"
-        app:layout_constraintTop_toBottomOf="@+id/errorFirstNameTextView" />
-
-    <TextView
-        android:id="@+id/errorEmailTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:filterTouchesWhenObscured="false"
-        android:text="* Given Email Is Invalid"
-
-        android:textColor="#F44336"
-        app:layout_constraintStart_toStartOf="@+id/registerLayout"
-        app:layout_constraintTop_toBottomOf="@+id/errorLastNameTextView" />
-
-    <TextView
-        android:id="@+id/errorPasswordTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:filterTouchesWhenObscured="false"
-        android:text="* Password Too Short"
-
-        android:textColor="#F44336"
-        app:layout_constraintStart_toStartOf="@+id/registerLayout"
-        app:layout_constraintTop_toBottomOf="@+id/errorEmailTextView" />
 
     <!--switch button for admin
     -->
-
-    <Switch
-        android:id="@+id/adminSwitch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:filterTouchesWhenObscured="false"
-        android:minHeight="48dp"
-        android:text="Admin   "
-        android:textColor="#FFFFFF"
-        android:textSize="23sp"
-        app:layout_constraintEnd_toEndOf="parent"
-
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/errorPasswordTextView" />
-
-    <Button
-        android:id="@+id/registerSubmitButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:background="#959595"
-        android:filterTouchesWhenObscured="false"
-
-        android:phoneNumber="false"
-        android:text="Register"
-        android:textAllCaps="false"
-        android:textColorHighlight="#EAE8E8"
-        android:textColorLink="#716A6A"
-        android:textSize="20sp"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/adminSwitch" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

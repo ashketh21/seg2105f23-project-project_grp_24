@@ -1,0 +1,7 @@
+<resources>
+    <string-array name="spinner_items">
+
+        <item>Club Owner</item>
+        <item>Participant</item>
+    </string-array>
+</resources>
