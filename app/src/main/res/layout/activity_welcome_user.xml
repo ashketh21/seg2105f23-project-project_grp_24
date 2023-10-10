@@ -21,7 +21,11 @@
             android:layout_height="199dp"
             android:lineSpacingExtra="8sp"
             android:textAlignment="center"
+<<<<<<< HEAD
             android:textColor="#A214FA"
+=======
+            android:textColor="#673AB7"
+>>>>>>> df60da0bd4091a4c13978b2747bd9aa9495bad42
             android:textSize="34sp"
             android:textStyle="bold|italic" />
 

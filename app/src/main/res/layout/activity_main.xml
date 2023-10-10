@@ -21,7 +21,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:tint="#5A5858" />
+        app:tint="#6750A3" />
 
     <TextView
         android:id="@+id/registerTextView"
@@ -44,7 +44,7 @@
         android:layout_marginTop="14dp"
         android:text="Register your Account"
         android:textColor="#959595"
-        android:textSize="24sp"
+        android:textSize="28sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -79,7 +79,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="Select a Role:"
-                android:textSize="16sp" />
+                android:textSize="18.5sp" />
 
             <Spinner
                 android:id="@+id/role"
@@ -187,7 +187,8 @@
 
             android:text="Admin   "
             android:textColor="#673AB7"
-            android:textSize="23sp" />
+            android:textSize="23sp"
+            android:trackTint="#6750A3" />
 
         <Button
             android:id="@+id/registerSubmitButton"
@@ -199,11 +200,12 @@
 
             android:onClick="onRegisterButtonClick"
             android:phoneNumber="false"
+            android:shadowColor="#6750A3"
             android:text="Register"
             android:textAllCaps="false"
             android:textColorHighlight="#EAE8E8"
-            android:textColorLink="#716A6A"
 
+            android:textColorLink="#716A6A"
             android:textSize="20sp" />
 
     </LinearLayout>
