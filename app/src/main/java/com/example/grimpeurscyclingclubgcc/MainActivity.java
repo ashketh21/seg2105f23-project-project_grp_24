@@ -16,6 +16,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 public class MainActivity extends AppCompatActivity {
 
+    //conecting to database
+    private FirebaseDatabase database = FirebaseDatabase.getInstance("https://seg-project-c0dfe-default-rtdb.firebaseio.com/");
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         //if admin hiding other fields
         if(admin.isChecked()){
             firstNameEditText.setVisibility(View.GONE);
+            firstNameEditText.setText("");
             lastNameEditText.setVisibility((View.GONE));
             roleSpinner.setVisibility(View.GONE);
             emailEditText.setVisibility(View.GONE);
@@ -136,8 +141,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        //conecting to database
-        FirebaseDatabase database = FirebaseDatabase.getInstance("https://seg-project-gcc-default-rtdb.firebaseio.com/");
 
         //setting values of a user in database
         database.getReference("users/" + userName + "/username").setValue(userName);
