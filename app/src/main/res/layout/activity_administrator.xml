@@ -14,10 +14,23 @@
         <TextView
             android:id="@+id/welcome_msg"
             android:layout_width="match_parent"
-            android:layout_height="392dp"
+            android:layout_height="117dp"
             android:gravity="center"
             android:text="Welcome admin!!!"
             android:textSize="34sp" />
+
+        <TextView
+            android:id="@+id/eventListText"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:text="List of events offered"
+            android:textAlignment="textStart"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:typeface="serif" />
 
         <ListView
             android:id="@+id/listViewEvents"
@@ -30,6 +43,24 @@
             android:layout_height="wrap_content"
             android:onClick="createEvent"
             android:text="@string/add_event" />
+
+        <TextView
+            android:id="@+id/userListText"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:text="List of users"
+            android:textAlignment="textStart"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:typeface="serif" />
+
+        <ListView
+            android:id="@+id/listViewUsers"
+            android:layout_width="match_parent"
+            android:layout_height="220dp" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,6 +11,11 @@ public class Event {
             // Default constructor required for Firebase
         }
 
+        public Event(String eventName, String description){
+            this.eventName = eventName;
+            this.description = description;
+        }
+
         public Event(String eventName, String minimumAge, String description, String pace, String participants) {
             this.eventName = eventName;
             this.minimumAge = minimumAge;

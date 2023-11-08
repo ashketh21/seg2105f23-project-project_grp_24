@@ -26,11 +26,11 @@ public class EventList  extends ArrayAdapter<Event> {
         View listViewItem = inflater.inflate(R.layout.event_list, null, true);
 
         TextView textViewName = (TextView) listViewItem.findViewById(R.id.eventName);
-        TextView textViewPrice = (TextView) listViewItem.findViewById(R.id.description);
+        TextView textViewDescription = (TextView) listViewItem.findViewById(R.id.description);
 
         Event event = events.get(position);
         textViewName.setText(event.getEventName());
-        textViewPrice.setText(event.getDescription());
+        textViewDescription.setText(event.getDescription());
         return listViewItem;
     }
 }
