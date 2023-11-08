@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Grimpeurs Cycling Club (GCC)</string>
+    <string name="add_event"> Add a new event </string>
+
 </resources>

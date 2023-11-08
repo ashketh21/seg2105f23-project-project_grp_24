@@ -9,10 +9,14 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.analytics.FirebaseAnalytics;
+import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.database.FirebaseDatabase;
 public class MainActivity extends AppCompatActivity {
 
@@ -24,137 +28,64 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
     }
 
-    public void onAdminButtonClick(View views){
 
-        //getting all the elements by ids
-        Switch admin = findViewById(R.id.adminSwitch);
-        EditText firstNameEditText = findViewById(R.id.firstName);
-        EditText lastNameEditText = findViewById(R.id.lastName);
-        Spinner roleSpinner = findViewById(R.id.role);
-        EditText emailEditText = findViewById(R.id.email);
-        TextView selectRoleText = findViewById(R.id.roleSelectText);
+    public void onLoginButtonClick(View views){
 
-        //if admin hiding other fields
-        if(admin.isChecked()){
-            firstNameEditText.setVisibility(View.GONE);
-            firstNameEditText.setText("");
-            lastNameEditText.setVisibility((View.GONE));
-            roleSpinner.setVisibility(View.GONE);
-            emailEditText.setVisibility(View.GONE);
-            selectRoleText.setVisibility(View.GONE);
-        } else{
-
-            //else making all fields visible
-            firstNameEditText.setVisibility(View.VISIBLE);
-            lastNameEditText.setVisibility(View.VISIBLE);
-            roleSpinner.setVisibility(View.VISIBLE);
-            emailEditText.setVisibility((View.VISIBLE));
-            selectRoleText.setVisibility(View.VISIBLE);
-
-        }
-    }
-
-    public void onRegisterButtonClick(View views){
-        EditText firstNameEditText = findViewById(R.id.firstName);
-        EditText lastNameEditText = findViewById(R.id.lastName);
-        Spinner roleSpinner = findViewById(R.id.role);
-        EditText emailEditText = findViewById(R.id.email);
+        // getting the fields information
         EditText passwordEditText = findViewById(R.id.password);
         EditText userNameEditText = findViewById(R.id.userName);
 
-
-        //getting values from all the fields in the register form
-        String firstName = firstNameEditText.getText().toString();
-        String lastName = lastNameEditText.getText().toString();
-        String role = roleSpinner.getSelectedItem().toString();
-        String email = emailEditText.getText().toString();
+        //converting input to string
         String password = passwordEditText.getText().toString().trim();
         String userName = userNameEditText.getText().toString().trim();
 
-        //admin login logic
-        Switch admin = findViewById(R.id.adminSwitch);
-        if(admin.isChecked()){
-            String user = "admin";
-            if(!userName.equals(user) || !password.equals(user) ){
-                userNameEditText.setError("Username is wrong");
-                userNameEditText.requestFocus();
-                passwordEditText.setError("Password is wrong");
-                passwordEditText.requestFocus();
-                return;
-            }else{
-                Intent intent = new Intent(this, WelcomeUserActivity.class);
-                intent.putExtra("username", "admin");
-                intent.putExtra("role", "admin");
-                startActivity(intent);
-            }
-        }
+        //checking if admin
+        if(userName.equals("admin")  && password.equals("admin")){
+            Intent intent = new Intent(this, AdministratorActivity.class); //start a admin intent and transfer to that activity
+            startActivity(intent);
+        } else{
 
-        // boolean to keep track of the validation status in the registration form
-        boolean valid = true;
+            //check for the regular user in database and authenticate the user.
+            DatabaseReference ref = database.getReference("users/" + userName);
+            ref.addValueEventListener(new ValueEventListener() {  //callback function to impliment the listener and check the user credentials
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    User user = dataSnapshot.getValue(User.class);  //getting the user object
 
-        //username validation
-        if(userName.isEmpty()){
-            userNameEditText.setError("Username is required");
-            userNameEditText.requestFocus();
-            valid = false;
-        }
+                    //checking if username and password are correct as per DB
+                    if(user.getUsername().equals(userName) && user.getPassword().equals(password)){
 
-        //firstname validation
-        if (firstName.isEmpty()) {
-            firstNameEditText.setError("First name is required");
-            firstNameEditText.requestFocus();
-            valid = false;
-        }
+                        //redireting to the user activity ******* still need to be implimented ********
+                        Intent intent = new Intent(MainActivity.this, WelcomeUserActivity.class);
 
-        //lastname validation
-        if (lastName.isEmpty()) {
-            lastNameEditText.setError("Last name is required");
-            lastNameEditText.requestFocus();
-            valid = false;
-        }
+                        intent.putExtra("username", user.getFirstName());
+                        intent.putExtra("role", user.getRole());
 
-        // email validations
-        if (email.isEmpty()) {
-            emailEditText.setError("Email is required");
-            emailEditText.requestFocus();
-            valid = false;
-        }
-        if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            emailEditText.setError("Invalid email address");
-            emailEditText.requestFocus();
-            valid = false;
-        }
+                        startActivity(intent);
+                    } else{
+                        //if not found or incorrect / toast a msg for that
+                        Toast.makeText(getApplicationContext(), "User not found/Incorrect credentials ", Toast.LENGTH_SHORT).show();
+                    }
+                }
 
-        //basic password validation
-        if (password.isEmpty()) {
-            passwordEditText.setError("Password is required");
-            passwordEditText.requestFocus();
-            valid = false;
-        }
-
-        //checking if any of the validation was failed
-        if(!valid){
-            return;
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+                    System.out.println("The read failed: " + databaseError.getCode());
+                }
+            });
         }
 
 
+    }
 
 
-        //setting values of a user in database
-        database.getReference("users/" + userName + "/username").setValue(userName);
-        database.getReference("users/" + userName + "/firstName").setValue(firstName);
-        database.getReference("users/" + userName + "/lastName").setValue(lastName);
-        database.getReference("users/" + userName + "/role").setValue(role);
-        database.getReference("users/" + userName + "/email").setValue(email);
-        database.getReference("users/" + userName + "/password").setValue(password);
-
+    public void onRegisterButtonClick(View views){
 
         //starting a new intent
-        Intent intent = new Intent(this, WelcomeUserActivity.class);
-        intent.putExtra("username", firstName);
-        intent.putExtra("role", role);
+        Intent intent = new Intent(this, RegisterActivity.class);
         startActivity(intent);
     }
 
