@@ -8,88 +8,95 @@
     tools:context=".MainActivity"
     tools:ignore="ExtraText">
 
+
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_gravity="center"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
-            android:layout_height="202dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+            android:layout_marginBottom="32dp"
+            android:fontFamily="sans-serif-medium"
             android:gravity="center"
             android:text="Welcome"
-            android:textSize="34sp" />
+            android:textAllCaps="false"
+            android:textColor="#6854a4"
+            android:textSize="38sp"
+            android:typeface="normal" />
 
         <EditText
             android:id="@+id/userName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
-            android:background="#959595"
+            android:layout_marginEnd="24dp"
+            android:backgroundTint="#959595"
             android:hint="Username"
             android:inputType="text"
-            android:minHeight="48dp"
-            android:paddingStart="16dp"
-            android:paddingTop="10dp"
-            android:paddingEnd="16dp"
-            android:paddingBottom="12dp" />
+            android:padding="16dp"
+            android:textColor="#6854a4" />
 
         <EditText
             android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
-            android:background="#959595"
+            android:layout_marginEnd="24dp"
+            android:backgroundTint="#959595"
             android:hint="Password"
-
             android:inputType="textPassword"
-            android:minHeight="48dp"
-            android:paddingStart="16dp"
-            android:paddingTop="10dp"
-            android:paddingEnd="16dp"
-            android:paddingBottom="12dp"
-             />
+            android:padding="16dp"
+            android:textColor="#6854a4" />
 
         <Button
             android:id="@+id/loginSubmitButton"
-            android:layout_width="386dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-
-            android:background="#959595"
-            android:filterTouchesWhenObscured="false"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="16dp"
+            android:background="#6750A3"
+            android:fontFamily="sans-serif-medium"
             android:onClick="onLoginButtonClick"
-            android:phoneNumber="false"
-            android:shadowColor="#6750A3"
             android:text="Login"
-
-            android:textAllCaps="false"
-            android:textColorHighlight="#EAE8E8"
-            android:textColorLink="#716A6A"
-            android:textSize="20sp" />
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:typeface="sans"
+            app:icon="@drawable/login" />
 
         <Button
             android:id="@+id/registerSubmitButton"
-            android:layout_width="386dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="4dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="24dp"
             android:background="#959595"
-
-            android:filterTouchesWhenObscured="false"
-            android:gravity="center"
+            android:fontFamily="sans-serif-medium"
             android:onClick="onRegisterButtonClick"
-            android:phoneNumber="false"
-            android:shadowColor="#6750A3"
             android:text="Register"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:typeface="sans"
+            app:icon="@drawable/register" />
 
-            android:textAllCaps="false"
-            android:textColorHighlight="#EAE8E8"
-            android:textColorLink="#716A6A"
-            android:textSize="20sp" />
+        <!--layout height set to 400 dp for optimal image compression -->>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:src="@drawable/bgimg"
+
+        android:scaleType="centerCrop" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -16,8 +16,13 @@
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="102dp"
+            android:fontFamily="sans-serif-light"
             android:gravity="center"
-            android:text="@string/add_event" />
+            android:text="@string/add_event"
+            android:textColor="#6854A4"
+            android:textSize="24sp"
+            android:textStyle="italic"
+            android:typeface="normal" />
 
 
         <LinearLayout
@@ -30,8 +35,13 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:fontFamily="sans-serif-medium"
                 android:gravity="center|start"
-                android:text="Name of event:" />
+                android:text="Name of event:"
+                android:textAlignment="viewStart"
+                android:textAllCaps="false"
+                android:textColor="#6854A4"
+                android:textSize="16sp" />
 
             <EditText
                 android:id="@+id/eventTypeName"
@@ -39,8 +49,12 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
+                android:fontFamily="sans-serif"
                 android:hint="New event name"
-                android:inputType="text" />
+                android:inputType="text"
+                android:textColor="#6854A4"
+                android:textColorHint="#6854A4"
+                android:textSize="14sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -53,8 +67,12 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:fontFamily="sans-serif-medium"
                 android:gravity="center|start"
-                android:text="Minimum age" />
+                android:text="Minimum age"
+                android:textAlignment="viewStart"
+                android:textColor="#6854A4"
+                android:textSize="16sp" />
 
             <EditText
                 android:id="@+id/minimumAge"
@@ -62,8 +80,11 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
+                android:fontFamily="sans-serif"
                 android:hint="Minimum age"
-                android:inputType="text" />
+                android:inputType="text"
+                android:textColorHint="#6854A4"
+                android:textSize="14sp" />
 
         </LinearLayout>
 
@@ -77,8 +98,12 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:fontFamily="sans-serif-medium"
                 android:gravity="center|start"
-                android:text="Description:" />
+                android:text="Description:"
+                android:textAlignment="viewStart"
+                android:textColor="#6854A4"
+                android:textSize="16sp" />
 
             <EditText
                 android:id="@+id/eventDescription"
@@ -86,8 +111,11 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:ems="10"
+                android:fontFamily="sans-serif"
                 android:hint="Event description"
-                android:inputType="text" />
+                android:inputType="text"
+                android:textColorHint="#6854A4"
+                android:textSize="14sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -100,8 +128,12 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:fontFamily="sans-serif-medium"
                 android:gravity="center|start"
-                android:text="Pace:" />
+                android:text="Pace:"
+                android:textAlignment="viewStart"
+                android:textColor="#6854A4"
+                android:textSize="16sp" />
 
             <EditText
                 android:id="@+id/pace"
@@ -109,8 +141,11 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
+                android:fontFamily="sans-serif"
                 android:hint="High, Medium, Low"
-                android:inputType="text" />
+                android:inputType="text"
+                android:textColorHint="#6854A4"
+                android:textSize="14sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -123,8 +158,12 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:fontFamily="sans-serif-medium"
                 android:gravity="center|start"
-                android:text="No. of participants:" />
+                android:text="No. of participants:"
+                android:textAlignment="viewStart"
+                android:textColor="#6854A4"
+                android:textSize="16sp" />
 
             <EditText
                 android:id="@+id/participantsAllowed"
@@ -132,8 +171,11 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
+                android:fontFamily="sans-serif"
                 android:hint="No. of participants allowed"
-                android:inputType="text" />
+                android:inputType="text"
+                android:textColorHint="#6854A4"
+                android:textSize="14sp" />
 
         </LinearLayout>
 
@@ -142,7 +184,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="addEvent"
-            android:text="Submit" />
+            android:text="Submit"
+            app:icon="@android:drawable/ic_input_add" />
 
 
     </LinearLayout>
