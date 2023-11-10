@@ -4,7 +4,13 @@ public class Event {
         private String eventName;
         private String minimumAge;
         private String description;
+
+        private String region;
         private String pace;
+
+        private String fee;
+
+        private String difficulty;
         private String participants;
 
         public Event() {
@@ -16,14 +22,25 @@ public class Event {
             this.description = description;
         }
 
-        public Event(String eventName, String minimumAge, String description, String pace, String participants) {
+        public Event(String eventName, String minimumAge, String fee, String description, String difficulty,String region, String pace, String participants) {
             this.eventName = eventName;
             this.minimumAge = minimumAge;
+            this.fee = fee;
             this.description = description;
+            this.region = region;
             this.pace = pace;
+            this.difficulty = difficulty;
             this.participants = participants;
         }
 
+        public void setRegion(String region) {this.region = region;}
+
+        public String getRegion() {return this.region;}
+        public void setDifficulty(String difficulty) {this.difficulty = difficulty;}
+        public String getDifficulty() {return difficulty;}
+
+        public void setFee(String fee) {this.fee = fee;}
+        public String getFee() { return fee;}
         public String getEventName() {
             return eventName;
         }

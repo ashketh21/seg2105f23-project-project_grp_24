@@ -23,13 +23,19 @@ public class CreateNewEventActivity extends AppCompatActivity {
     public void addEvent(View view){
         EditText eventNameEditText = findViewById(R.id.eventTypeName);
         EditText minimumAgeEditText = findViewById(R.id.minimumAge);
+        EditText feeEditText = findViewById(R.id.fee);
         EditText descriptionEditText = findViewById(R.id.eventDescription);
+        EditText difficultyEditText = findViewById(R.id.difficulty);
+        EditText regionEditText = findViewById(R.id.region);
         EditText paceEditText = findViewById(R.id.pace);
         EditText participantsAllowedEditText = findViewById(R.id.participantsAllowed);
 
         String eventName = eventNameEditText.getText().toString();
         String minimumAge = minimumAgeEditText.getText().toString();
+        String fee = feeEditText.getText().toString();
         String description = descriptionEditText.getText().toString();
+        String difficulty = difficultyEditText.getText().toString();
+        String region = regionEditText.getText().toString();
         String pace = paceEditText.getText().toString();
         String participants = participantsAllowedEditText.getText().toString();
 
@@ -41,10 +47,20 @@ public class CreateNewEventActivity extends AppCompatActivity {
             eventNameEditText.requestFocus();
             valid = false;
         }
+        if(region.isEmpty()){
+            regionEditText.setError("Region is required");
+            regionEditText.requestFocus();
+            valid = false;
+        }
 
         if(minimumAge.isEmpty()){
             minimumAgeEditText.setError("age is required");
             minimumAgeEditText.requestFocus();
+            valid = false;
+        }
+        if(fee.isEmpty()){
+            feeEditText.setError("fee is required");
+            feeEditText.requestFocus();
             valid = false;
         }
         if(description.isEmpty()){
@@ -55,6 +71,11 @@ public class CreateNewEventActivity extends AppCompatActivity {
         if(pace.isEmpty()){
             paceEditText.setError("pace is required");
             paceEditText.requestFocus();
+            valid = false;
+        }
+        if(difficulty.isEmpty()){
+            difficultyEditText.setError("difficulty level is required");
+            difficultyEditText.requestFocus();
             valid = false;
         }
         if(participants.isEmpty()){
@@ -69,8 +90,11 @@ public class CreateNewEventActivity extends AppCompatActivity {
 
         database.getReference("events/" + eventName + "/eventName").setValue(eventName);
         database.getReference("events/" + eventName + "/minimumAge").setValue(minimumAge);
+        database.getReference("events/" + eventName + "/fee").setValue(fee);
         database.getReference("events/" + eventName + "/description").setValue(description);
         database.getReference("events/" + eventName + "/pace").setValue(pace);
+        database.getReference("events/" + eventName + "/region").setValue(region);
+        database.getReference("events/" + eventName + "/difficulty").setValue(difficulty);
         database.getReference("events/" + eventName + "/participants").setValue(participants);
 
         Toast.makeText(this, "New event added!", Toast.LENGTH_SHORT).show();
