@@ -25,7 +25,7 @@
             android:fontFamily="sans-serif-medium"
             android:gravity="center"
             android:text="Welcome"
-            android:textAllCaps="false"
+            android:textAllCaps="true"
             android:textColor="#6854a4"
             android:textSize="38sp"
             android:typeface="normal" />

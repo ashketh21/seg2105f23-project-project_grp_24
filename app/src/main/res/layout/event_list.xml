@@ -22,7 +22,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.8"
                 android:inputType="text"
-                android:text="Event Name : " />
+                android:text="Event Name : "
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/eventName"
@@ -31,6 +32,7 @@
                 android:layout_weight="1.5"
                 android:gravity="center|start"
                 android:text="TextView"
+                android:textColor="#68549C"
                 android:textSize="20sp" />
 
         </LinearLayout>
@@ -47,7 +49,8 @@
                 android:layout_weight="0.8"
                 android:ems="10"
                 android:inputType="text"
-                android:text="Description:" />
+                android:text="Description:"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/description"
@@ -56,6 +59,7 @@
                 android:layout_weight="1.5"
                 android:gravity="center|start"
                 android:text="TextView"
+                android:textColor="#604B98"
                 android:textSize="20sp" />
 
         </LinearLayout>

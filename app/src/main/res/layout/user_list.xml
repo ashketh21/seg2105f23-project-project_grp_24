@@ -37,7 +37,8 @@
                         android:layout_weight="0.8"
                         android:gravity="center|start"
                         android:inputType="text"
-                        android:text=" Username : " />
+                        android:text=" Username : "
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/userName"
@@ -46,6 +47,7 @@
                         android:layout_weight="1.5"
                         android:gravity="center|start"
                         android:text="TextView"
+                        android:textColor="#6750A3"
                         android:textSize="20sp" />
 
                 </LinearLayout>
@@ -63,7 +65,8 @@
                         android:ems="10"
                         android:gravity="center|start"
                         android:inputType="text"
-                        android:text="Role:" />
+                        android:text="Role:"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/role"
@@ -72,6 +75,7 @@
                         android:layout_weight="1.5"
                         android:gravity="center|start"
                         android:text="TextView"
+                        android:textColor="#6750A3"
                         android:textSize="20sp" />
 
                 </LinearLayout>
