@@ -14,6 +14,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
+        android:background="@drawable/loginbackground"
+        android:backgroundTint="#C1CFCFCF"
+        android:backgroundTintMode="src_over"
         android:orientation="vertical">
 
         <TextView
@@ -41,7 +44,8 @@
             android:hint="Username"
             android:inputType="text"
             android:padding="16dp"
-            android:textColor="#6854a4" />
+            android:textColor="#6854a4"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/password"
@@ -54,7 +58,8 @@
             android:hint="Password"
             android:inputType="textPassword"
             android:padding="16dp"
-            android:textColor="#6854a4" />
+            android:textColor="#6854a4"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/loginSubmitButton"
@@ -64,7 +69,7 @@
             android:layout_marginTop="24dp"
             android:layout_marginEnd="24dp"
             android:layout_marginBottom="16dp"
-            android:background="#6750A3"
+            android:background="@drawable/roundstyle"
             android:fontFamily="sans-serif-medium"
             android:onClick="onLoginButtonClick"
             android:text="Login"
@@ -80,7 +85,7 @@
             android:layout_marginStart="24dp"
             android:layout_marginEnd="24dp"
             android:layout_marginBottom="24dp"
-            android:background="#959595"
+            android:background="@drawable/roundstyle"
             android:fontFamily="sans-serif-medium"
             android:onClick="onRegisterButtonClick"
             android:text="Register"
@@ -94,9 +99,10 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="400dp"
-            android:src="@drawable/bgimg"
+            android:scaleType="centerCrop"
 
-        android:scaleType="centerCrop" />
+            android:src="@drawable/bgimg" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

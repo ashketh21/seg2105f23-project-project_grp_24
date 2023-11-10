@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/material_dynamic_secondary100"
+    android:background="@drawable/loginbackground"
+    android:backgroundTint="#A8F4F4F4"
+    android:backgroundTintMode="src_over"
     tools:context=".MainActivity"
     tools:ignore="ExtraText">
 
@@ -76,19 +78,20 @@
                 android:layout_width="143dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="#566854A4"
+                android:background="#756854A4"
                 android:gravity="center"
                 android:text="Select a Role:"
                 android:textColor="#6854A4"
                 android:textColorHint="#6854A4"
-                android:textSize="18.5sp" />
+                android:textSize="18.5sp"
+                android:textStyle="bold" />
 
             <Spinner
                 android:id="@+id/role"
                 android:layout_width="255dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="#566854A4"
+                android:background="#756854A4"
                 android:dropDownWidth="match_parent"
                 android:entries="@array/spinner_items"
                 android:fadingEdge="vertical"
@@ -100,7 +103,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:background="#566854A4"
+            android:background="#756854A4"
             android:hint="Username"
             android:inputType="text"
             android:minHeight="48dp"
@@ -109,7 +112,8 @@
             android:paddingEnd="16dp"
             android:paddingBottom="12dp"
             android:textColor="#6854A4"
-            android:textColorHint="#6854A4" />
+            android:textColorHint="#6854A4"
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -123,7 +127,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginRight="8dp"
                 android:layout_weight="1"
-                android:background="#566854A4"
+                android:background="#756854A4"
                 android:hint="First Name"
                 android:inputType="text"
                 android:minHeight="48dp"
@@ -133,6 +137,7 @@
                 android:paddingBottom="12dp"
                 android:textColor="#6854A4"
                 android:textColorHint="#6854A4"
+                android:textStyle="bold"
                 android:visibility="visible" />
 
             <EditText
@@ -141,7 +146,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:layout_weight="1"
-                android:background="#566854A4"
+                android:background="#756854A4"
                 android:hint="Last Name"
                 android:inputType="text"
                 android:minHeight="48dp"
@@ -150,7 +155,8 @@
                 android:paddingEnd="16dp"
                 android:paddingBottom="12dp"
                 android:textColor="#6854A4"
-                android:textColorHint="#6854A4" />
+                android:textColorHint="#6854A4"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
@@ -159,7 +165,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:background="#566854A4"
+            android:background="#756854A4"
             android:hint="Email"
             android:inputType="textEmailAddress"
             android:minHeight="48dp"
@@ -168,14 +174,15 @@
             android:paddingEnd="16dp"
             android:paddingBottom="12dp"
             android:textColor="#6854A4"
-            android:textColorHint="#6854A4" />
+            android:textColorHint="#6854A4"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:background="#566854A4"
+            android:background="#756854A4"
             android:hint="Password"
 
             android:inputType="textPassword"
@@ -185,14 +192,15 @@
             android:paddingEnd="16dp"
             android:paddingBottom="12dp"
             android:textColor="#6854A4"
-            android:textColorHint="#6854A4" />
+            android:textColorHint="#6854A4"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/registerSubmitButton"
-            android:layout_width="386dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:background="#959595"
+            android:background="@drawable/roundstyle"
             android:filterTouchesWhenObscured="false"
 
             android:onClick="onRegisterButtonClick"
