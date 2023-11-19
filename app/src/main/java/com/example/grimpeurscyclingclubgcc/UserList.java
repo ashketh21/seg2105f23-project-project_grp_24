@@ -1,6 +1,7 @@
 package com.example.grimpeurscyclingclubgcc;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,8 +46,34 @@ public class UserList extends ArrayAdapter<User>{
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DatabaseReference usersRef = database.getReference("users/" + user.getUsername());
-                usersRef.removeValue();
+
+                AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(context);
+                LayoutInflater inflater = context.getLayoutInflater();
+                final View dialogView = inflater.inflate(R.layout.delete_user_dialog, null);
+                dialogBuilder.setView(dialogView);
+
+                final Button buttonConfirm = (Button) dialogView.findViewById(R.id.buttonConfirm);
+                final Button buttonDelete = (Button) dialogView.findViewById(R.id.buttonCancel);
+
+                final AlertDialog b = dialogBuilder.create();
+                b.show();
+
+                buttonConfirm.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        DatabaseReference usersRef = database.getReference("users/" + user.getUsername());
+                        usersRef.removeValue();
+                        b.dismiss();
+                    }
+                });
+
+                buttonDelete.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        b.dismiss();
+                    }
+                });
+
             }
         });
 
