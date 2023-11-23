@@ -13,6 +13,8 @@ public class Event {
         private String difficulty;
         private String participants;
 
+        private String date;
+
         public Event() {
             // Default constructor required for Firebase
         }
@@ -31,8 +33,12 @@ public class Event {
             this.pace = pace;
             this.difficulty = difficulty;
             this.participants = participants;
+            this.date = "TBD";
         }
 
+        public void setDate(String date) {this.date = date;}
+
+        public String getDate() {return this.date;}
         public void setRegion(String region) {this.region = region;}
 
         public String getRegion() {return this.region;}

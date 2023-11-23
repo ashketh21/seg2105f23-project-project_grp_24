@@ -1,0 +1,105 @@
+class Administrator
+{
+public void createEvent(){
+}
+public void createEvent(){
+}
+public void updateEvent(){
+}
+public void deleteEvent(){
+}
+public void deleteEvent(){
+}
+isA User;
+1 -- * Event;
+}
+class User
+{
+password;
+username;
+}
+class ClubOwner
+{
+firstName;
+lastName;
+email;
+List eventList;
+socialMediaLink;
+mainContactName;
+Int phoneNumber;
+public boolean createEvent(){
+
+}
+public boolean editEvent(){
+
+}
+public boolean deleteEvent(){
+
+}
+isA User;
+  1 -- * Event;
+}
+class Participant
+{
+firstName;
+lastName;
+email;
+public void registerToEvent(){
+}
+public void registerToEvent(){
+}
+public void registerToEvent(){
+}
+isA User;
+}
+class Event
+{
+region;
+eventName;
+difficulty;
+double fees;
+int participantLimit;
+int minimumAge;
+description;
+pace;
+date;
+* -- 1 RoutePlanning;
+}
+class RoutePlanning
+{
+Double distance;
+Double elevation;
+landmark;
+}
+namespace -;
+class Administrator
+{
+position 19 182 170.242 115.367;
+position.association User__Administrator 0,31 114,30;
+position.association Administrator__User 116,17 110,112;
+position.association Administrator__Event 47,115 29,0;
+}
+class User
+{
+position 134 18 141.93 77.3672;
+position.association User__Administrator 114,31 0,30;
+}
+class ClubOwner
+{
+position 351 167 198.812 214.359;
+  position.association ClubOwner__Event 0,169 158,19;
+}
+class Participant
+{
+position 668 158 140.688 92.3594;
+}
+class Event
+{
+position 40 349 156.938 197.359;
+position.association Event__RoutePlanning 158,55 0,48;
+position.association Event__ClubOwner 0,131 108,42;
+}
+class RoutePlanning
+{
+position 285 464 142.438 92.3594;
+}//$?[End_of_model]$?
