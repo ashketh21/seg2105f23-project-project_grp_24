@@ -58,14 +58,20 @@ public class MainActivity extends AppCompatActivity {
                     //checking if username and password are correct as per DB
                     if(user.getUsername().equals(userName) && user.getPassword().equals(password)){
 
-                        //redireting to the user activity ******* still need to be implimented ********
-                        Intent intent = new Intent(MainActivity.this, WelcomeUserActivity.class);
-
-                        intent.putExtra("username", user.getFirstName());
-                        intent.putExtra("role", user.getRole());
-
-                        startActivity(intent);
-                    } else{
+                        if(user.getRole().equals("Club Owner")){
+                            Intent intent = new Intent(MainActivity.this, WelcomeUserActivity.class);
+                            intent.putExtra("username", user.getFirstName());
+                            intent.putExtra("role", user.getRole());
+                            startActivity(intent);
+                        }
+                        else if(user.getRole().equals("Participant")){
+                            Intent intent = new Intent(MainActivity.this, ParticipantActivity.class);
+                            intent.putExtra("username", user.getFirstName());
+                            intent.putExtra("role", user.getRole());
+                            startActivity(intent);
+                        }
+                    }
+                    else{
                         //if not found or incorrect / toast a msg for that
                         Toast.makeText(getApplicationContext(), "User not found/Incorrect credentials ", Toast.LENGTH_SHORT).show();
                     }

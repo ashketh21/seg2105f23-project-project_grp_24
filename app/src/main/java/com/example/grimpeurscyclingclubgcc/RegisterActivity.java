@@ -103,9 +103,17 @@ public class RegisterActivity extends AppCompatActivity {
 
 
         //starting a new intent
-        Intent intent = new Intent(this, WelcomeUserActivity.class);
-        intent.putExtra("username", firstName);
-        intent.putExtra("role", role);
-        startActivity(intent);
+          if(role.equals("Club Owner")){
+              Intent intent = new Intent(this, ClubOwnerActivity.class);
+              intent.putExtra("username", firstName);
+              intent.putExtra("role", role);
+              startActivity(intent);
+          }
+          else if(role.equals("Participant")){
+              Intent intent = new Intent(this, ParticipantActivity.class);
+              intent.putExtra("username", firstName);
+              intent.putExtra("role", role);
+              startActivity(intent);
+          }
     }
 }
