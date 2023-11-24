@@ -87,7 +87,7 @@
                 android:textStyle="bold" />
 
             <Spinner
-                android:id="@+id/role"
+                android:id="@+id/eventSpinner"
                 android:layout_width="255dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"

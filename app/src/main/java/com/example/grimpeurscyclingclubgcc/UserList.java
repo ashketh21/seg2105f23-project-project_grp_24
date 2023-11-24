@@ -36,7 +36,7 @@ public class UserList extends ArrayAdapter<User>{
         View listViewUser = inflater.inflate(R.layout.user_list, null, true);
 
         TextView textViewName = (TextView) listViewUser.findViewById(R.id.userName);
-        TextView textViewRole = (TextView) listViewUser.findViewById(R.id.role);
+        TextView textViewRole = (TextView) listViewUser.findViewById(R.id.eventSpinner);
         Button deleteButton = (Button) listViewUser.findViewById(R.id.deleteUserButton);
 
 

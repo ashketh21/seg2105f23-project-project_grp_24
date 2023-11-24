@@ -7,13 +7,12 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.Switch;
-import android.widget.TextView;
 
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.analytics.FirebaseAnalytics;
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class RegisterActivity extends AppCompatActivity {
 
     //conecting to database
@@ -29,7 +28,7 @@ public class RegisterActivity extends AppCompatActivity {
       public void onRegisterButtonClick(View views) {
         EditText firstNameEditText = findViewById(R.id.firstName);
         EditText lastNameEditText = findViewById(R.id.lastName);
-        Spinner roleSpinner = findViewById(R.id.role);
+        Spinner roleSpinner = findViewById(R.id.eventSpinner);
         EditText emailEditText = findViewById(R.id.email);
         EditText passwordEditText = findViewById(R.id.password);
         EditText userNameEditText = findViewById(R.id.userName);
@@ -104,6 +103,11 @@ public class RegisterActivity extends AppCompatActivity {
 
         //starting a new intent
           if(role.equals("Club Owner")){
+              database.getReference("users/" + userName + "/socialMediaLink").setValue("");
+              database.getReference("users/" + userName + "/contactPersonName").setValue("");
+              database.getReference("users/" + userName + "/phoneNumber").setValue("");
+              List<Event> events = new ArrayList<>();
+              database.getReference("users/" + userName + "/events").setValue(events);
               Intent intent = new Intent(this, ClubOwnerActivity.class);
               intent.putExtra("username", firstName);
               intent.putExtra("role", role);

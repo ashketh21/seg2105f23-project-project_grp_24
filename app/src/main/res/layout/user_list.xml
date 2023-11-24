@@ -69,7 +69,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/role"
+                        android:id="@+id/eventSpinner"
                         android:layout_width="0dp"
                         android:layout_height="45dp"
                         android:layout_weight="1.5"

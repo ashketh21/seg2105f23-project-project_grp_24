@@ -1,5 +1,7 @@
 package com.example.grimpeurscyclingclubgcc;
 
+import java.util.List;
+
 public class User {
     private String username;
     private String firstName;
@@ -7,6 +9,8 @@ public class User {
     private String role;
     private String email;
     private String password;
+
+
 
     public User() {
         // Default constructor required for Firebase

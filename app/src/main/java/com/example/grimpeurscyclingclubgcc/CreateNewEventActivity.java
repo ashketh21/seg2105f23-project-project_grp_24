@@ -96,6 +96,11 @@ public class CreateNewEventActivity extends AppCompatActivity {
         database.getReference("events/" + eventName + "/region").setValue(region);
         database.getReference("events/" + eventName + "/difficulty").setValue(difficulty);
         database.getReference("events/" + eventName + "/participants").setValue(participants);
+        database.getReference("events/" + eventName + "/date").setValue("");
+        database.getReference("events/" + eventName + "/distance").setValue(0.0);
+        database.getReference("events/" + eventName + "/elevation").setValue(0.0);
+        database.getReference("events/" + eventName + "/landmark").setValue("");
+
 
         Toast.makeText(this, "New event added!", Toast.LENGTH_SHORT).show();
 

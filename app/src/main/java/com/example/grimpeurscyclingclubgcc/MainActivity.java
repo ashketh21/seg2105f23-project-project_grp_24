@@ -59,14 +59,13 @@ public class MainActivity extends AppCompatActivity {
                     if(user.getUsername().equals(userName) && user.getPassword().equals(password)){
 
                         if(user.getRole().equals("Club Owner")){
-                            Intent intent = new Intent(MainActivity.this, WelcomeUserActivity.class);
-                            intent.putExtra("username", user.getFirstName());
-                            intent.putExtra("role", user.getRole());
+                            Intent intent = new Intent(MainActivity.this, ClubOwnerActivity.class);
+                            intent.putExtra("username", userName);
                             startActivity(intent);
                         }
                         else if(user.getRole().equals("Participant")){
                             Intent intent = new Intent(MainActivity.this, ParticipantActivity.class);
-                            intent.putExtra("username", user.getFirstName());
+                            intent.putExtra("username", userName);
                             intent.putExtra("role", user.getRole());
                             startActivity(intent);
                         }

@@ -9,15 +9,151 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textViewClubOwner"
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/profileEditText"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:gravity="center" />
+            android:gravity="center"
+            android:inputType="text"
+            android:text="Edit your profile details" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/SocialMediaLinkText"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center|start"
+                android:text="Social Media Link: "
+                android:textAlignment="viewStart"
+                android:textAllCaps="false"
+                android:textColor="#6854A4"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/socialMediaLink"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:fontFamily="sans-serif"
+                android:hint="Eg: https://...."
+                android:inputType="text"
+                android:textColor="#6854A4"
+                android:textColorHint="#6854A4"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/MainContactPersonText"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center|start"
+                android:text="Contact Person name"
+                android:textAlignment="viewStart"
+                android:textAllCaps="false"
+                android:textColor="#6854A4"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/contactPersonName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:fontFamily="sans-serif"
+                android:hint="Enter name"
+                android:inputType="text"
+                android:textColor="#6854A4"
+                android:textColorHint="#6854A4"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/PhoneNumberText"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center|start"
+                android:text="Phone No: "
+                android:textAlignment="viewStart"
+                android:textAllCaps="false"
+                android:textColor="#6854A4"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/phoneNumber"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:fontFamily="sans-serif"
+                android:hint="+ (area code)-XXX-XXXX"
+                android:inputType="phone"
+                android:maxLength="10"
+                android:textColor="#6854A4"
+                android:textColorHint="#6854A4"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
+
+        <Button
+            android:id="@+id/updateProfileButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="updateProfile"
+            android:text="Update Profile" />
+
+        <Button
+            android:id="@+id/addEventButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="addEvent"
+            android:text="Add New Event" />
+
+        <EditText
+            android:id="@+id/ListOfEventsText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="center"
+            android:inputType="text"
+            android:text="List of Current Events" />
+
+        <ListView
+            android:id="@+id/listViewEvents"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp" />
+
     </LinearLayout>
 
 </RelativeLayout>

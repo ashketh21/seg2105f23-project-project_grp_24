@@ -15,6 +15,12 @@ public class Event {
 
         private String date;
 
+        private Double distance;
+        private Double elevation;
+        private String landmarks;
+
+
+
         public Event() {
             // Default constructor required for Firebase
         }
@@ -33,9 +39,57 @@ public class Event {
             this.pace = pace;
             this.difficulty = difficulty;
             this.participants = participants;
-            this.date = "TBD";
+            this.date = "";
+            this.distance = 0.0;
+            this.elevation = 0.0;
+            this.landmarks = "";
         }
 
+    public Event(String eventName, String minimumAge, String fee, String description, String difficulty,String region, String pace, String participants, String date, Double distance,Double elevation, String landmark) {
+        this.eventName = eventName;
+        this.minimumAge = minimumAge;
+        this.fee = fee;
+        this.description = description;
+        this.region = region;
+        this.pace = pace;
+        this.difficulty = difficulty;
+        this.participants = participants;
+        this.date = date;
+        this.distance = distance;
+        this.elevation = elevation;
+        this.landmarks = landmark;
+    }
+
+
+
+    public Double getDistance() {
+        return distance;
+    }
+
+    // Setter for distance
+    public void setDistance(Double distance) {
+        this.distance = distance;
+    }
+
+    // Getter for elevation
+    public Double getElevation() {
+        return elevation;
+    }
+
+    // Setter for elevation
+    public void setElevation(Double elevation) {
+        this.elevation = elevation;
+    }
+
+    // Getter for landmarks
+    public String getLandmarks() {
+        return landmarks;
+    }
+
+    // Setter for landmarks
+    public void setLandmarks(String landmarks) {
+        this.landmarks = landmarks;
+    }
         public void setDate(String date) {this.date = date;}
 
         public String getDate() {return this.date;}
