@@ -4,5 +4,6 @@
     <string name="delete_confirm">Would you like to delete this user?</string>
     <string name="button_confirm">Confirm</string>
     <string name="button_cancel">Cancel</string>
+    <string name="text_update_event_co">Update Event</string>
 
 </resources>

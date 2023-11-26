@@ -120,6 +120,7 @@ public class AddEventActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 List<String> eventNames = new ArrayList<>();
 
+                //gets only the name of the events since only the list of the names will be displayed in the spinner
                 for(DataSnapshot eventSnapshot : snapshot.getChildren()){
                     String eventName = eventSnapshot.child("eventName").getValue(String.class);
                     eventNames.add(eventName);
