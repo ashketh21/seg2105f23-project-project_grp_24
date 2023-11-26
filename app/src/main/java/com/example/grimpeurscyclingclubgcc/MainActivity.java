@@ -50,40 +50,43 @@ public class MainActivity extends AppCompatActivity {
 
             //check for the regular user in database and authenticate the user.
             DatabaseReference ref = database.getReference("users/" + userName);
-            ref.addValueEventListener(new ValueEventListener() {  //callback function to impliment the listener and check the user credentials
-                @Override
-                public void onDataChange(DataSnapshot dataSnapshot) {
-                    User user = dataSnapshot.getValue(User.class);  //getting the user object
+            if (ref != null){
+                ref.addValueEventListener(new ValueEventListener() {  //callback function to impliment the listener and check the user credentials
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        if (dataSnapshot.exists()) {
+                            User user = dataSnapshot.getValue(User.class);  // getting the user object
 
-                    //checking if username and password are correct as per DB
-                    if(user.getUsername().equals(userName) && user.getPassword().equals(password)){
+                            // checking if username and password are correct as per DB
+                            if (user != null && user.getUsername().equals(userName) && user.getPassword().equals(password)) {
 
-                        if(user.getRole().equals("Club Owner")){
-                            Intent intent = new Intent(MainActivity.this, ClubOwnerActivity.class);
-                            intent.putExtra("username", userName);
-                            startActivity(intent);
+                                if (user.getRole().equals("Club Owner")) {
+                                    Intent intent = new Intent(MainActivity.this, ClubOwnerActivity.class);
+                                    intent.putExtra("username", userName);
+                                    startActivity(intent);
+                                } else if (user.getRole().equals("Participant")) {
+                                    Intent intent = new Intent(MainActivity.this, ParticipantActivity.class);
+                                    intent.putExtra("username", userName);
+                                    intent.putExtra("role", user.getRole());
+                                    startActivity(intent);
+                                }
+                            } else {
+                                // if not found or incorrect / toast a msg for that
+                                Toast.makeText(getApplicationContext(), "User not found/Incorrect credentials", Toast.LENGTH_SHORT).show();
+                            }
+                        } else {
+                            // User does not exist in the database
+                            Toast.makeText(getApplicationContext(), "User not found/Incorrect credentials", Toast.LENGTH_SHORT).show();
                         }
-                        else if(user.getRole().equals("Participant")){
-                            Intent intent = new Intent(MainActivity.this, ParticipantActivity.class);
-                            intent.putExtra("username", userName);
-                            intent.putExtra("role", user.getRole());
-                            startActivity(intent);
-                        }
-                    }
-                    else{
-                        //if not found or incorrect / toast a msg for that
-                        Toast.makeText(getApplicationContext(), "User not found/Incorrect credentials ", Toast.LENGTH_SHORT).show();
-                    }
-                }
 
-                @Override
-                public void onCancelled(DatabaseError databaseError) {
-                    System.out.println("The read failed: " + databaseError.getCode());
-                }
-            });
+                    }
+                    @Override
+                    public void onCancelled (DatabaseError databaseError){
+                        System.out.println("The read failed: " + databaseError.getCode());
+                    }
+                });
+            }
         }
-
-
     }
 
 

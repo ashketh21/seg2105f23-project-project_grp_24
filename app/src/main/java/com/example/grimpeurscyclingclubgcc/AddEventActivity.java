@@ -203,6 +203,29 @@ public class AddEventActivity extends AppCompatActivity {
             valid = false;
         }
 
+        if(date.isEmpty()){
+            dateEditText.setError("please enter a date");
+            dateEditText.requestFocus();
+            valid = false;
+        }
+
+        if(distance.isNaN()){
+            distanceEditText.setError("please enter a distance");
+            distanceEditText.requestFocus();
+            valid = false;
+        }
+
+        if(elevation.isNaN()){
+            elevationEditText.setError("please enter elevation value");
+            elevationEditText.requestFocus();
+            valid = false;
+        }
+
+        if(landmark.isEmpty()){
+            landmarkEditText.setError("please enter a landmark");
+            landmarkEditText.requestFocus();
+            valid = false;
+        }
         if(!isValidDate(date)){
             dateEditText.setError("please enter a date in dd-mm-yyyy format");
             dateEditText.requestFocus();
