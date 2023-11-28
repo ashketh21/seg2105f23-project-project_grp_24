@@ -23,6 +23,7 @@
                 android:layout_weight="0.8"
                 android:inputType="text"
                 android:text="Event Name : "
+                android:textColor="#604B98"
                 android:textStyle="bold" />
 
             <TextView
@@ -50,6 +51,7 @@
                 android:ems="10"
                 android:inputType="text"
                 android:text="Description:"
+                android:textColor="#604B98"
                 android:textStyle="bold" />
 
             <TextView
