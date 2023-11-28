@@ -6,27 +6,27 @@
     android:layout_height="match_parent">
 
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="start"
         android:orientation="vertical">
 
-<!--        <EditText-->
-<!--            android:id="@+id/editTextEventName"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:ems="10"-->
-<!--            android:hint="Event name"-->
-<!--            android:inputType="text" />-->
+        <!--        <EditText-->
+        <!--            android:id="@+id/editTextEventName"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:ems="10"-->
+        <!--            android:hint="Event name"-->
+        <!--            android:inputType="text" />-->
 
-<!--        <EditText-->
-<!--            android:id="@+id/editTextDescription"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:ems="10"-->
-<!--            android:hint="Description"-->
-<!--            android:inputType="text" />-->
+        <!--        <EditText-->
+        <!--            android:id="@+id/editTextDescription"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:ems="10"-->
+        <!--            android:hint="Description"-->
+        <!--            android:inputType="text" />-->
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -127,6 +127,7 @@
                 android:textSize="14sp" />
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="107dp"
@@ -158,6 +159,7 @@
                 android:textColorHint="#6854A4"
                 android:textSize="14sp" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
