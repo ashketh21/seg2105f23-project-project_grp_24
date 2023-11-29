@@ -11,7 +11,7 @@ public void deleteEvent(){
 public void deleteEvent(){
 }
 isA User;
-  1 -- 1 EventList;
+    1 -- * Event;
 }
 class User
 {
@@ -23,11 +23,12 @@ class ClubOwner
 firstName;
 lastName;
 email;
-List eventList;
 socialMediaLink;
 mainContactName;
 Int phoneNumber;
-public boolean createEvent(){
+  1 -- 1 EventList;
+public boolean
+  createEvent(){
 
 }
 public boolean editEvent(){
@@ -37,7 +38,7 @@ public boolean deleteEvent(){
 
 }
 isA User;
-    1 -- * Event;
+      
 }
 class Participant
 {
@@ -66,7 +67,7 @@ date;
 Double distance;
 Double elevation;
 landmark;
-  * -- 1 EventList;
+    * -- 1 EventList;
 }
 namespace -;
 class EventList
@@ -76,20 +77,20 @@ class EventList
 
 class Administrator
 {
-position 19 182 170.242 115.367;
+position 76 119 174.719 115.367;
 position.association User__Administrator 0,31 114,30;
 position.association Administrator__User 116,17 110,112;
-  position.association Administrator__EventList 43,36 49,0;
+    position.association Administrator__Event 21,115 68,0;
 }
 class User
 {
-position 134 18 141.93 77.3672;
+position 287 0 141.93 97.8672;
 position.association User__Administrator 114,31 0,30;
 }
 class ClubOwner
 {
-position 351 167 130.25 226.359;
-    position.association ClubOwner__Event 54,160 141,0;
+position 402 163 198.805 220.367;
+      position.association ClubOwner__EventList 23,165 98,0;
 }
 class Participant
 {
@@ -97,16 +98,16 @@ position 668 158 140.688 92.3594;
 }
 class Event
 {
-position 193 448 156.938 245.359;
+position 40 269 156.93 252.367;
 position.association Event__ClubOwner 0,131 108,42;
-  position.association Event__EventList 0,13 98,58;
+    position.association Event__EventList 158,125 0,36;
 }
-//$?[End_of_model]$?
+
 
 namespace -;
 
 
 class EventList
 {
-  position 12 303 109 41;
-}
+  position 258 358 119.008 59.8672;
+}//$?[End_of_model]$?
