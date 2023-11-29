@@ -10,6 +10,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:backgroundTint="#D6EDDAE8"
+        android:foregroundTint="#D6C692B7"
         android:orientation="vertical">
 
         <TextView
@@ -20,7 +22,7 @@
             android:text="Welcome Admin"
             android:textColor="#800080"
             android:textSize="34sp"
-            android:textStyle="bold" />
+            android:textStyle="bold|italic" />
 
         <TextView
             android:id="@+id/eventListText"

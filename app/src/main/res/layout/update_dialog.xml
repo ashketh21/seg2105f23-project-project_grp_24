@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:backgroundTint="#D6EDDAE8">
 
 
     <LinearLayout
@@ -300,6 +301,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Update"
+                android:textStyle="bold"
                 app:icon="@android:drawable/stat_sys_upload_done" />
 
             <Button
@@ -308,6 +310,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Delete"
+                android:textStyle="bold"
                 app:icon="@android:drawable/ic_delete" />
 
         </LinearLayout>

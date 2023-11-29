@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/material_dynamic_secondary100"
+    android:backgroundTint="#D6EDDAE8"
     tools:context=".MainActivity"
     tools:ignore="ExtraText">
 
@@ -15,8 +16,10 @@
         android:layout_height="match_parent"
         android:layout_gravity="center"
         android:background="@drawable/loginbackground"
-        android:backgroundTint="#C1CFCFCF"
-        android:backgroundTintMode="src_over"
+        android:backgroundTint="#D6EDDAE8"
+        android:backgroundTintMode="src_atop"
+        android:foregroundTint="#D6B599AD"
+        android:foregroundTintMode="src_over"
         android:orientation="vertical">
 
         <TextView
@@ -31,6 +34,7 @@
             android:textAllCaps="true"
             android:textColor="#6854a4"
             android:textSize="38sp"
+            android:textStyle="bold|italic"
             android:typeface="normal" />
 
         <EditText
@@ -40,7 +44,7 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="24dp"
-            android:backgroundTint="#959595"
+            android:backgroundTint="#D6EDDAE8"
             android:hint="Username"
             android:inputType="text"
             android:padding="16dp"
@@ -70,13 +74,16 @@
             android:layout_marginEnd="24dp"
             android:layout_marginBottom="16dp"
             android:background="@drawable/roundstyle"
+            android:clipToOutline="false"
             android:fontFamily="sans-serif-medium"
             android:onClick="onLoginButtonClick"
+            android:outlineAmbientShadowColor="#673AB7"
             android:text="Login"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             android:typeface="sans"
-            app:icon="@drawable/login" />
+            app:icon="@drawable/login"
+            app:strokeColor="#6854A3" />
 
         <Button
             android:id="@+id/registerSubmitButton"
@@ -88,6 +95,7 @@
             android:background="@drawable/roundstyle"
             android:fontFamily="sans-serif-medium"
             android:onClick="onRegisterButtonClick"
+            android:outlineSpotShadowColor="#673AB7"
             android:text="Register"
             android:textColor="#FFFFFF"
             android:textSize="20sp"

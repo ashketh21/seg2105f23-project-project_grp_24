@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/loginbackground"
-    android:backgroundTint="#CDD5CFCF"
+    android:backgroundTint="#D6EDDAE8"
     android:backgroundTintMode="src_over"
     tools:context=".CreateNewEventActivity">
 
@@ -292,6 +292,7 @@
             android:elevation="2dp"
             android:onClick="addEvent"
             android:text="Submit"
+            android:textStyle="bold"
             app:icon="@android:drawable/ic_input_add" />
 
 
