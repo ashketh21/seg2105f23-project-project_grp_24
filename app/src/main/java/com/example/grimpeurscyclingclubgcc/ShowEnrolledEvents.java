@@ -40,7 +40,7 @@ public class ShowEnrolledEvents extends AppCompatActivity {
                 participant = snapshot.getValue(Participant.class);
                 eventList = participant.getEnrolledEvents();
                 if(eventList != null){
-                    EnrolledEventList eventAdaptor = new EnrolledEventList(ShowEnrolledEvents.this, eventList);
+                    EnrolledEventList eventAdaptor = new EnrolledEventList(ShowEnrolledEvents.this, eventList, participant.getUsername());
                     enrolledEventList.setAdapter(eventAdaptor);
                 }
             }

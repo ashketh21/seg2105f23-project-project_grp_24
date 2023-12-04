@@ -131,6 +131,7 @@ public class EnrollToEventActivity extends AppCompatActivity {
     private void addToParticipant(Participant participant,Event enrolledEvent) {
        DatabaseReference partRef = database.getReference("users/" + participant.getUsername());
         participant.addEnrolledEvent(enrolledEvent.getEventName()+ ", club Owner: " + enrolledEvent.getClubOwnerName());
+
         partRef.setValue(participant);
         Toast.makeText(EnrollToEventActivity.this, "enrolled!", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(EnrollToEventActivity.this, ParticipantActivity.class);

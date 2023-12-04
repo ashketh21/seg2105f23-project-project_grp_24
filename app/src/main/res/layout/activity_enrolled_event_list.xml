@@ -11,10 +11,24 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/eventText"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:textSize="16sp" />
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/eventText"
+                android:layout_width="291dp"
+                android:layout_height="40dp"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/reviewButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Review Event" />
+        </LinearLayout>
+
     </LinearLayout>
 </RelativeLayout>
