@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
                                 } else if (user.getRole().equals("Participant")) {
                                     Intent intent = new Intent(MainActivity.this, ParticipantActivity.class);
                                     intent.putExtra("username", userName);
-                                    intent.putExtra("role", user.getRole());
+
                                     startActivity(intent);
                                 }
                             } else {

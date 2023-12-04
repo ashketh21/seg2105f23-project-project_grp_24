@@ -40,7 +40,7 @@ public class ClubOwnerActivity extends AppCompatActivity {
     private ClubOwner user;
     ListView listViewEvents;
 
-    List<Event> eventList = new ArrayList<>();
+    private List<Event> eventList = new ArrayList<>();
 
 
     @Override
@@ -221,7 +221,7 @@ public class ClubOwnerActivity extends AppCompatActivity {
                 }
 
                 if(valid){
-                    Event updatedEvent = new Event(event.getEventName(),minimumAge,fee,description,difficulty,region,pace,participants,date,distance,elevation,landmark);
+                    Event updatedEvent = new Event(username,event.getEventName(),minimumAge,fee,description,difficulty,region,pace,participants,date,distance,elevation,landmark);
                     updateEvent(updatedEvent, position, username);
                     b.dismiss();
                 }

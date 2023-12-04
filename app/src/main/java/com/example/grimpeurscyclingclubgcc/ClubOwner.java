@@ -14,6 +14,8 @@ import java.util.List;
 
         private List<Event> events = new ArrayList<>();
 
+//        private List<Participant> participants = new ArrayList<>();
+
         public ClubOwner(){
 
         }
@@ -32,6 +34,9 @@ import java.util.List;
         public void removeEvent(Event event){
             this.events.remove(event);
         }
+
+//        public void setParticipants(List<Participant> participants){ this.participants = participants;}
+//public List<Participant> getParticipants(){return this.participants;}
 
         public String getSocialMediaLink() {
             return socialMediaLink;

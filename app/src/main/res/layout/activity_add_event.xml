@@ -295,7 +295,7 @@
                 android:ems="10"
                 android:fontFamily="sans-serif"
                 android:hint="dd-mm-yyyy"
-                android:inputType="date"
+                android:inputType="text"
                 android:textColorHint="#6854A4"
                 android:textSize="14sp" />
         </LinearLayout>

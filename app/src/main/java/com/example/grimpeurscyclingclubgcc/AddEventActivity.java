@@ -238,7 +238,7 @@ public class AddEventActivity extends AppCompatActivity {
 
 
         if(valid){
-            event = new Event(eventName,minimumAge,fee,description,difficulty,region,pace,participants,date,distance,elevation,landmark);
+            event = new Event(clubownerName,eventName,minimumAge,fee,description,difficulty,region,pace,participants,date,distance,elevation,landmark);
             clubownerRef.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
