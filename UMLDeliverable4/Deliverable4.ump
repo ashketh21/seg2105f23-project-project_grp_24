@@ -1,0 +1,129 @@
+class Administrator
+{
+public void createEvent(){
+}
+public void createEvent(){
+}
+public void updateEvent(){
+}
+public void deleteEvent(){
+}
+public void deleteEvent(){
+}
+isA User;
+    1 -- * Event;
+}
+class User
+{
+password;
+username;
+}
+class ClubOwner
+{
+firstName;
+lastName;
+email;
+socialMediaLink;
+mainContactName;
+Int phoneNumber;
+  1 -- 1 EventList;
+public boolean
+  createEvent(){
+
+}
+public boolean editEvent(){
+
+}
+public boolean deleteEvent(){
+
+}
+isA User;
+      
+}
+class Participant
+{
+firstName;
+lastName;
+email;
+List enrolledEvents;
+public void registerToEvent(){
+}
+public void registerToEvent(){
+}
+public void registerToEvent(){
+}
+public void showEnrolledEvents(){
+  
+}
+public void retriveEvents
+   	(){
+
+}
+public void filterEventList(){
+
+}
+public void retriveClubOwners(){
+
+}
+isA User;
+}
+class Event
+{
+region;
+eventName;
+difficulty;
+double fees;
+int participantLimit;
+int minimumAge;
+description;
+pace;
+date;
+Double distance;
+Double elevation;
+landmark;
+    int rating;
+feedback;
+* -- 1 EventList;
+}
+namespace -;
+class EventList
+{
+  List eventList;
+  }
+
+class Administrator
+{
+position 56 155 174.719 113.5;
+position.association User__Administrator 0,31 114,30;
+position.association Administrator__User 116,17 110,112;
+    position.association Administrator__Event 23,115 68,0;
+}
+class User
+{
+position 295 8 141.93 77.3672;
+position.association User__Administrator 114,31 0,30;
+}
+class ClubOwner
+{
+position 402 163 198.805 220.367;
+      position.association ClubOwner__EventList 21,147 98,0;
+}
+class Participant
+{
+position 632 180 224 202.867;
+}
+class Event
+{
+position 48 298 156.93 306;
+position.association Event__ClubOwner 0,131 108,42;
+    position.association Event__EventList 158,132 0,36;
+}
+
+
+namespace -;
+
+
+class EventList
+{
+  position 278 427 119.008 80.3672;
+  }//$?[End_of_model]$?
