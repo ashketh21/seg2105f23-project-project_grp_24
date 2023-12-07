@@ -76,10 +76,10 @@ public class EnrolledEventList extends ArrayAdapter<String> {
                             valid = false;
                         }
 
-                        if(rating.equals("1") || rating.equals("2") || rating.equals("3") || rating.equals("4") || rating.equals("5")){
-
-                            valid = true;
-                        }
+//                        if(rating.equals("1") || rating.equals("2") || rating.equals("3") || rating.equals("4") || rating.equals("5")){
+//
+//                            valid = true;
+//                        }
                         else{
                             ratingText.setError("You must enter a number between 1 and 5");
                             ratingText.requestFocus();
