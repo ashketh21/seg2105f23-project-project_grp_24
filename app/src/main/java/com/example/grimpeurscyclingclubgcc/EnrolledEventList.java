@@ -23,6 +23,8 @@ public class EnrolledEventList extends ArrayAdapter<String> {
     List<String> events;
     String username;
 
+    private AlertDialog alert;
+
     private FirebaseDatabase database = FirebaseDatabase.getInstance("https://seg-project-c0dfe-default-rtdb.firebaseio.com/");
 
     public EnrolledEventList(Activity context, List<String> events, String username) {
@@ -59,6 +61,7 @@ public class EnrolledEventList extends ArrayAdapter<String> {
 
 
                 final AlertDialog b = dialogBuilder.create();
+                alert = b;
                 b.show();
 
                 buttonConfirm.setOnClickListener(new View.OnClickListener() {
@@ -111,5 +114,14 @@ public class EnrolledEventList extends ArrayAdapter<String> {
 
 
         return listViewItem;
+    }
+    public boolean validateRating(String rating){
+        if(rating.equals("1") || rating.equals("2") || rating.equals("3") || rating.equals("4") || rating.equals("5")){
+            return true;
+        }
+        else return false;
+    }
+    public Object getAlertDialog() {
+        return alert;
     }
 }
