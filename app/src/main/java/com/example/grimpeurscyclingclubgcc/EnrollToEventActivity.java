@@ -46,6 +46,8 @@ public class EnrollToEventActivity extends AppCompatActivity {
     private String participantName;
     private String enteredAge;
 
+    private boolean validate = true;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,8 +105,10 @@ public class EnrollToEventActivity extends AppCompatActivity {
                         if(Integer.parseInt(enteredAge) < Integer.parseInt(event.getMinimumAge())){
                             ageEditText.setError("minimum age is "+ event.getMinimumAge());
                             ageEditText.requestFocus();
+                            validate = false;
                             return;
                         }
+                        validate = true;
                         //participant.addEnrolledEvent(event);
                         Event enrolledEvent = event;
                         event.addParticipants(participant);
@@ -139,4 +143,14 @@ public class EnrollToEventActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void setEnteredAge(String s) {
+        enteredAge = s;
+    }
+
+    public boolean validateAge() {
+        if (Integer.parseInt(enteredAge) >= 25){
+            return true;
+        }
+        return false;
+    }
 }
